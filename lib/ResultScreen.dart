@@ -10,6 +10,10 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return booking();
   }
 }
+
+class basbjkasdhfhasdf
+
+sdkjfskdjf
