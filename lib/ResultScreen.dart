@@ -10,6 +10,7 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
+    jjuuuuasd this is not a good code
     _ResultPageState createState() => _ResultPageState();
   }
 }
