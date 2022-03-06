@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thesis_v01/ResultScreen.dart';
 import 'package:thesis_v01/main.dart';
 class MyForm extends StatelessWidget {
   const MyForm({Key? key}) : super(key: key);
@@ -75,7 +76,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 Navigator.push (
                   context,
                   MaterialPageRoute(builder: (context)=> const ResultPage(),)
-                )
+                );
               },
               child: const Text('Submit'),
             ),
