@@ -73,10 +73,10 @@ class MyCustomFormState extends State<MyCustomForm> {
                     const SnackBar(content: Text('Processing Data')),
                   );
                 }
-                Navigator.push (
-                  context,
-                  MaterialPageRoute(builder: (context)=> const ResultPage(),)
-                );
+                // Navigator.push (
+                //   context,
+                //   MaterialPageRoute(builder: (context)=> const ResultPage(),)
+                // );
               },
               child: const Text('Submit'),
             ),
