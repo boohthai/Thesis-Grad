@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:thesis_v01/InputSection.dart';
+
 void main() {
   runApp(const MaterialApp(
     title: 'Thesis Demo',
+    debugShowCheckedModeBanner: false,
     home: FirstPage(),
   ));
 }
@@ -16,6 +18,7 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Thesis Demo'),
         backgroundColor: Colors.green,
+        centerTitle: true,
       ),
       body: Center(
         child: ElevatedButton(
@@ -34,4 +37,3 @@ class FirstPage extends StatelessWidget {
     );
   }
 }
-
