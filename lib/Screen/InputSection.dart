@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thesis_v01/ResultScreen.dart';
+import 'package:thesis_v01/Screen/ResultScreen.dart';
 import 'package:thesis_v01/main.dart';
 class MyForm extends StatelessWidget {
   const MyForm({Key? key}) : super(key: key);

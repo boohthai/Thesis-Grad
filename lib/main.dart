@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:thesis_v01/InputSection.dart';
+import 'package:thesis_v01/Screen/InputSection.dart';
+import 'package:thesis_v01/Screen/messages/ChatScreen.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Thesis Demo',
-    home: FirstPage(),
+    home: MessageScreen(),
   ));
 }
 
