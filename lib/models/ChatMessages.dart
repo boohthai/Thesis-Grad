@@ -1,14 +1,14 @@
-import 'dart:convert';
-import 'dart:io';
+// import 'dart:convert';
+// import 'dart:io';
+//
+// import 'package:csv/csv.dart';
+// import 'package:flutter/services.dart';
+// import 'package:path_provider/path_provider.dart';
 
-import 'package:csv/csv.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
-
-import '../controllers/convert_csv.dart';
+import 'package:thesis_v01/controllers/convert_csv.dart';
 
 enum MessageType { text, audio, image, video, undefined }
-enum MessageStatus { not_sent, not_view, viewed, undefined }
+enum MessageStatus {not_sent, not_view, viewed, undefined }
 
 class ChatMessage {
   final String text;
@@ -56,18 +56,18 @@ ChatMessage createMessage(field) {
   String text = field[0];
   String messageType = field[1];
   String messageStatus = field[2];
-  String isSender = field[3];
+  int isSender = field[3];
   return ChatMessage(
       text: text,
       messageType: messageTypeConverter(messageType),
       messageStatus: messageStatusConverter(messageStatus),
-      isSender: isSender == '1' ? true : false);
+      isSender: isSender ==  1 ? true : false);
 }
 
-List<ChatMessage> csvToMessages(filepath) {
+Future<List<ChatMessage>> csvToMessages(filepath) async{
   var chatMessages = List<ChatMessage>.empty(growable: true);
-  var fields = csvToFields(filepath);
-
+  var fields = await csvToFields(filepath);
+  print(fields);
   for (var field in fields) {
     var message = createMessage(field);
     chatMessages.add(message);
@@ -76,5 +76,9 @@ List<ChatMessage> csvToMessages(filepath) {
   return chatMessages;
 }
 
-List<ChatMessage> demeChatMessages =
-    csvToMessages('../data/user_chat_data.csv');
+// List<ChatMessage> await demeChatMessages =
+//      csvToMessages('user_chat_data.csv');
+
+// void main () {
+//   print(demeChatMessages[3].text);
+// }
