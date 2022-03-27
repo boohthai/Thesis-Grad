@@ -1,9 +1,18 @@
-enum ChatMessageType { text, audio, image, video }
-enum MessageStatus { not_sent, not_view, viewed }
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:csv/csv.dart';
+import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
+
+import '../controllers/convert_csv.dart';
+
+enum MessageType { text, audio, image, video, undefined }
+enum MessageStatus { not_sent, not_view, viewed, undefined }
 
 class ChatMessage {
   final String text;
-  final ChatMessageType messageType;
+  final MessageType messageType;
   final MessageStatus messageStatus;
   final bool isSender;
 
@@ -15,47 +24,57 @@ class ChatMessage {
   });
 }
 
-List demeChatMessages = [
-  ChatMessage(
-    text: "Hi Sajol,",
-    messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.viewed,
-    isSender: false,
-  ),
-  ChatMessage(
-    text: "Hello, How are you?",
-    messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.viewed,
-    isSender: true,
-  ),
-  ChatMessage(
-    text: "",
-    messageType: ChatMessageType.audio,
-    messageStatus: MessageStatus.viewed,
-    isSender: false,
-  ),
-  ChatMessage(
-    text: "",
-    messageType: ChatMessageType.video,
-    messageStatus: MessageStatus.viewed,
-    isSender: true,
-  ),
-  ChatMessage(
-    text: "Error happend",
-    messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.not_sent,
-    isSender: true,
-  ),
-  ChatMessage(
-    text: "This looks great man!!",
-    messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.viewed,
-    isSender: false,
-  ),
-  ChatMessage(
-    text: "Glad you like it",
-    messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.not_view,
-    isSender: true,
-  ),
-];
+MessageType messageTypeConverter(String type) {
+  switch (type) {
+    case 'text':
+      return MessageType.text;
+    case 'audio':
+      return MessageType.audio;
+    case 'video':
+      return MessageType.video;
+    case 'image':
+      return MessageType.image;
+    default:
+      return MessageType.undefined;
+  }
+}
+
+MessageStatus messageStatusConverter(String type) {
+  switch (type) {
+    case 'not sent':
+      return MessageStatus.not_sent;
+    case 'not viewed':
+      return MessageStatus.not_view;
+    case 'viewed':
+      return MessageStatus.viewed;
+    default:
+      return MessageStatus.undefined;
+  }
+}
+
+ChatMessage createMessage(field) {
+  String text = field[0];
+  String messageType = field[1];
+  String messageStatus = field[2];
+  String isSender = field[3];
+  return ChatMessage(
+      text: text,
+      messageType: messageTypeConverter(messageType),
+      messageStatus: messageStatusConverter(messageStatus),
+      isSender: isSender == '1' ? true : false);
+}
+
+List<ChatMessage> csvToMessages(filepath) {
+  var chatMessages = List<ChatMessage>.empty(growable: true);
+  var fields = csvToFields(filepath);
+
+  for (var field in fields) {
+    var message = createMessage(field);
+    chatMessages.add(message);
+  }
+
+  return chatMessages;
+}
+
+List<ChatMessage> demeChatMessages =
+    csvToMessages('../data/user_chat_data.csv');
