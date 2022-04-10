@@ -106,7 +106,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   final url = Uri.parse("http://10.0.2.2:8000/");
                   final response = await http
                       .post(url, body: json.encode({'text': text}), headers: {
-                    'Content-Type': "application/json; charset=utf-sss8",
+                    'Content-Type': "application/json; charset=utf-8",
                   });
                   print("Status Code: ${response.statusCode}");
                   print("Return Date: ${response.body}");

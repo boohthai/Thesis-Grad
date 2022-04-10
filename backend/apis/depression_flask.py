@@ -81,5 +81,5 @@ def index():
 
 if __name__ == '__main__':
     # print(get_depression_score(
-    #     "Dù sao thì cuối cùng cô ấy cũng thấy cô đơn và chán nản đến mức một ngày nọ, cô ấy nhốt mình trong phòng và tự bắn mình. "))
+    #      "Dù sao thì cuối cùng cô ấy cũng thấy cô đơn và chán nản đến mức một ngày nọ, cô ấy nhốt mình trong phòng và tự bắn mình. "))
     app.run(host='0.0.0.0',port = 8000, debug=True)
