@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thesis_v01/main.dart';
 import 'package:thesis_v01/constants.dart';
 import 'package:thesis_v01/Screen/messages/components/body.dart';
+import 'package:thesis_v01/ResultScreen.dart';
 class MessageScreen extends StatelessWidget {
   const MessageScreen({Key? key}) : super(key: key);
 

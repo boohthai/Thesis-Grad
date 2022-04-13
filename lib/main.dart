@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thesis_v01/InputSection.dart';
-
+import 'package:thesis_v01/Screen/messages/ChatScreen.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Thesis Demo',
@@ -29,7 +29,7 @@ class FirstPage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyForm()),
+              MaterialPageRoute(builder: (context) => const MessageScreen()),
             );
           },
         ),

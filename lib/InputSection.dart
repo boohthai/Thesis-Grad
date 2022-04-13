@@ -4,6 +4,7 @@ import 'package:thesis_v01/ResultScreen.dart';
 import 'package:thesis_v01/main.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:thesis_v01/Screen/messages/ChatScreen.dart';
 
 class MyForm extends StatelessWidget {
   const MyForm({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class MyForm extends StatelessWidget {
           backgroundColor: Colors.green,
           title: const Text(appTitle),
         ),
-        body: const MyCustomForm(),
+        body: const MessageScreen(),
       ),
     );
   }
@@ -60,28 +61,29 @@ class MyCustomFormState extends State<MyCustomForm> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 50),
-            TextFormField(
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              // The validator receives the text that the user has entered.
-              onChanged: (value) {
-                setState(() {
-                  text = value;
-                });
-              },
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.3),
-                  hintText: 'Write something to classify...',
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black87, width: 2),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black87, width: 2),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  )),
-            ),
+            // TextFormField(
+            //   keyboardType: TextInputType.multiline,
+            //   maxLines: null,
+            //   // The validator receives the text that the user has entered.
+            //   onChanged: (value) {
+            //     setState(() {
+            //       text = value;
+            //     });
+            //   },
+            //   decoration: InputDecoration(
+            //       filled: true,
+            //       fillColor: Colors.white.withOpacity(0.3),
+            //       hintText: 'Write something to classify...',
+            //       focusedBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.black87, width: 2),
+            //         borderRadius: BorderRadius.all(Radius.circular(20)),
+            //       ),
+            //       enabledBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.black87, width: 2),
+            //         borderRadius: BorderRadius.all(Radius.circular(20)),
+            //       )),
+            // ),
+
             SizedBox(height: 30),
             Center(
               //padding: const EdgeInsets.symmetric(vertical: 16.0),
