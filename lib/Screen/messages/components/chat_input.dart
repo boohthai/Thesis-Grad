@@ -2,15 +2,17 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:thesis_v01/constants.dart';
+import 'package:thesis_v01/ResultScreen.dart';
+
 class ButtonPressed extends StatelessWidget {
-   ButtonPressed({
-    Key? key,
-  }) : super(key: key);
-  List<dynamic> string_to_list(res) {
-    var list = res.substring(1,res.length-1).split("), ");
+   ButtonPressed({ Key? key,}) : super(key: key);
+  List<String> string_to_list(res) {
+     var list = res.substring(1,res.length-1).split("), ");
+    //var list = json.decode(res);
     return list;
   }
   final _formKey = GlobalKey<FormState>();
+  List<dynamic> result =[];
   @override
   Widget build(BuildContext context) {
     return Container (
@@ -39,7 +41,7 @@ class ButtonPressed extends StatelessWidget {
                   if (response.statusCode == 200) {
                     final jsonResponse =
                     jsonDecode(response.body) as Map<String, dynamic>;
-                    var result = string_to_list(jsonResponse['output']);
+                    result = string_to_list(jsonResponse['output']);
                     print("Depression Result: $result");
                     // setState(() {
                     //   depressionResult = depressionResult;
@@ -50,17 +52,17 @@ class ButtonPressed extends StatelessWidget {
                   }
 
                   // Validate returns true if the form is valid, or false otherwise.
-                  if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar. In the real world,
-                    // you'd often call a server or save the information in a database.
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')),
-                    );
-                  }
-                  // Navigator.push (
-                  //   context,
-                  //   MaterialPageRoute(builder: (context)=> const ResultPage(),)
-                  // );
+                  // if (_formKey.currentState!.validate()) {
+                  //   // If the form is valid, display a snackbar. In the real world,
+                  //   // you'd often call a server or save the information in a database.
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //     const SnackBar(content: Text('Processing Data')),
+                  //   );
+                  // }
+                  Navigator.push (
+                    context,
+                    MaterialPageRoute(builder: (context)=> new ResultPage(result))
+                  );
                 },
               ),
             ),
