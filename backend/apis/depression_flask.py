@@ -9,7 +9,8 @@ import pandas as pd
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 import csv
-
+import psycopg2
+from backend.config import config
 
 # Load depression model
 lstm_model = load_model(
@@ -17,18 +18,25 @@ lstm_model = load_model(
 
 d_df = pd.read_csv("../data/vietaitweet.csv")
 tweets = d_df['tweet_vi'].values
-# data_test = pd.read_csv("C:/Users/thait/AndroidStudioProjects/thesis_v01/assets/user_chat_data.csv")
 
 
-with open('C:/Users/thait/AndroidStudioProjects/thesis_v01/assets/user_chat_data.csv', newline='') as f:
-    reader = csv.reader(f)
-    realdata = list(reader)
-
-# Load tokenizer
-# tokenizer = AutoTokenizer.from_pretrained(
-#     "../tokenizers/", truncation=True, do_lower_case=True)
-
-# Preprocess text (username and link placeholders)
+def get_data():
+    conn = None
+    result = []
+    try:
+        params = config()
+        conn = psycopg2.connect(database="Thesis", user='postgres', password='Tt0979566863', host ='localhost', port= '5432')
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM public.\"UserConversation\"")
+        print("The number of parts: ", cur.rowcount)
+        result = cur.fetchall()
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+    return result
 
 
 def preprocess(text):
@@ -55,8 +63,8 @@ def get_depression_score(lst_data):
     count = 0
     lst_result = []
     for i in range(len(lst_data)):
-        if lst_data[i][3] == '1':
-            preprocessed_text = preprocess(lst_data[i][0])
+        if lst_data[i][4] == True:
+            preprocessed_text = preprocess(lst_data[i][1])
             encoded_text = text_encoder(preprocessed_text)
             score = lstm_model.predict(encoded_text)[0][0]
             depression = 1 if score > 0.5 else 0
@@ -81,18 +89,11 @@ def index():
     print(f"Input text: {text_from_app}")
     final_result = get_depression_score(text_from_app)
     print(final_result)
-    # print(f"Depression: {final_result[0]}")
-    # print(f"Score: {final_result[1]}")
 
-    # final_result = "Depressed" if depression == 1 else "Non-Depressed"
-    #
-    # array['depression'] = final_result
-    # array['score'] = str(score)
-    # return "abc"
     return jsonify({"output":str(final_result)})
 
 if __name__ == '__main__':
-    # print(get_depression_score(realdata))
-    # print(get_depression_score(
+    pro_data = get_data()
+    print(get_depression_score(pro_data))
     #      "Dù sao thì cuối cùng cô ấy cũng thấy cô đơn và chán nản đến mức một ngày nọ, cô ấy nhốt mình trong phòng và tự bắn mình. "))
-    app.run(host='0.0.0.0',port = 8000, debug=True)
+    #app.run(host='0.0.0.0',port = 8000, debug=True)

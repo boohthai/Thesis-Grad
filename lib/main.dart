@@ -6,7 +6,7 @@ void main() {
   runApp( MaterialApp(
     title: 'Thesis Demo',
     debugShowCheckedModeBanner: false,
-    home: Home_Screen(),
+    home: FirstPage(),
   ));
 }
 
