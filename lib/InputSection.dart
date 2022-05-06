@@ -61,28 +61,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 50),
-            // TextFormField(
-            //   keyboardType: TextInputType.multiline,
-            //   maxLines: null,
-            //   // The validator receives the text that the user has entered.
-            //   onChanged: (value) {
-            //     setState(() {
-            //       text = value;
-            //     });
-            //   },
-            //   decoration: InputDecoration(
-            //       filled: true,
-            //       fillColor: Colors.white.withOpacity(0.3),
-            //       hintText: 'Write something to classify...',
-            //       focusedBorder: OutlineInputBorder(
-            //         borderSide: BorderSide(color: Colors.black87, width: 2),
-            //         borderRadius: BorderRadius.all(Radius.circular(20)),
-            //       ),
-            //       enabledBorder: OutlineInputBorder(
-            //         borderSide: BorderSide(color: Colors.black87, width: 2),
-            //         borderRadius: BorderRadius.all(Radius.circular(20)),
-            //       )),
-            // ),
+
 
             SizedBox(height: 30),
             Center(

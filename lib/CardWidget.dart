@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:charts_flutter/flutter.dart' as charts;
-
+import 'ResultScreen.dart' as calculated;
 class ChartsDemo extends StatefulWidget {
   //
-  ChartsDemo() : super();
-
-  final String title = "Charts Demo";
+  ChartsDemo(List) : super();
 
   @override
   ChartsDemoState createState() => ChartsDemoState();
@@ -17,8 +15,8 @@ class ChartsDemoState extends State<ChartsDemo> {
   late final List<charts.Series<dynamic, String>> seriesList;
 
   static List<charts.Series<Info, String>> _createRandomData() {
-    final random = Random();
 
+    final random = Random();
     final desktopSalesData = [
       Info('Mon', random.nextInt(100)),
       Info('Tue', random.nextInt(100)),
@@ -28,22 +26,6 @@ class ChartsDemoState extends State<ChartsDemo> {
       Info('Sat', random.nextInt(100)),
       Info('Sun', random.nextInt(100)),
     ];
-
-    // final tabletSalesData = [
-    //   Sales('2015', random.nextInt(100)),
-    //   Sales('2016', random.nextInt(100)),
-    //   Sales('2017', random.nextInt(100)),
-    //   Sales('2018', random.nextInt(100)),
-    //   Sales('2019', random.nextInt(100)),
-    // ];
-    //
-    // final mobileSalesData = [
-    //   Sales('2015', random.nextInt(100)),
-    //   Sales('2016', random.nextInt(100)),
-    //   Sales('2017', random.nextInt(100)),
-    //   Sales('2018', random.nextInt(100)),
-    //   Sales('2019', random.nextInt(100)),
-    // ];
 
     return [
       charts.Series<Info, String>(
@@ -55,24 +37,6 @@ class ChartsDemoState extends State<ChartsDemo> {
           return charts.MaterialPalette.blue.shadeDefault;
         },
       ),
-      // charts.Series<Sales, String>(
-      //   id: 'Sales',
-      //   domainFn: (Sales sales, _) => sales.year,
-      //   measureFn: (Sales sales, _) => sales.sales,
-      //   data: tabletSalesData,
-      //   fillColorFn: (Sales sales, _) {
-      //     return charts.MaterialPalette.green.shadeDefault;
-      //   },
-      // ),
-      // charts.Series<Sales, String>(
-      //   id: 'Sales',
-      //   domainFn: (Sales sales, _) => sales.year,
-      //   measureFn: (Sales sales, _) => sales.sales,
-      //   data: mobileSalesData,
-      //   fillColorFn: (Sales sales, _) {
-      //     return charts.MaterialPalette.teal.shadeDefault;
-      //   },
-      //)
     ];
   }
 
@@ -101,11 +65,9 @@ class ChartsDemoState extends State<ChartsDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(40.0),
         child: barChart(),
       ),
     );
@@ -115,6 +77,5 @@ class ChartsDemoState extends State<ChartsDemo> {
 class Info {
   final String time;
   final int value;
-
   Info(this.time, this.value);
 }

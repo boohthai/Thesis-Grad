@@ -1,7 +1,7 @@
-Hi man,text,viewed,0
-"Hello, what sub bro?",text,viewed,1
-...,text,viewed,1
-"OMG bro, the error just happened in our code",text,viewed,0
-"Oh dame, this is not so good",text,viewed,1
-"We must try out some auto fixing tool, it might be helpful",text,viewed,1
-"Oh no, our application is on the way of deployment and this happenned, so unfortunate",text,not viewed,1
+"","Hi man",text,viewed,False
+"","Hello, what sub bro?",text,viewed,True
+"",...,text,viewed,True
+"","OMG bro, the error just happened in our code",text,viewed,False
+"","Oh dame, this is not so good",text,viewed,True
+"","We must try out some auto fixing tool, it might be helpful",text,viewed,True
+"","Oh no, our application is on the way of deployment and this happenned, so unfortunate",text,not viewed,True

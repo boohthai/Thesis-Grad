@@ -1,8 +1,11 @@
 import 'dart:io';
-
+import 'CardWidget.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:thesis_v01/controllers/convert_csv.dart';
+import 'models/ChatMessages.dart';
 class ResultPage extends StatefulWidget {
   final List<dynamic> processedResult;
   const ResultPage(this.processedResult);
@@ -20,6 +23,7 @@ class _ResultPageState extends State<ResultPage> {
       home: Scaffold (
         appBar: AppBar(
             title: Text('Result'),
+          centerTitle: true,
           backgroundColor: Colors.green,
         ),
         body: new Diagnose(this.widget.processedResult),
@@ -34,8 +38,15 @@ class Diagnose extends StatefulWidget {
   _DiagnoseState createState() => _DiagnoseState();
 }
 
-class _DiagnoseState extends State<Diagnose> {
-
+class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin{
+  final colorstheme = Color(0xff4b4b87);
+  late TabController _tabController;
+  @override
+  void initState() {
+    _tabController = new TabController(length: 3, vsync: this, initialIndex: 0)
+      ..addListener(() {});
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     List<dynamic> result = this.widget.result;
@@ -44,60 +55,45 @@ class _DiagnoseState extends State<Diagnose> {
     double scr = new_result[1];
     return Column(
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.all(40.0),
+        SizedBox(height: 10),
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              color: Colors.grey[300]),
+          child: TabBar(
+              isScrollable: true,
+              indicatorPadding: EdgeInsets.all(10),
+              labelColor: Colors.white,
+              unselectedLabelColor: colorstheme,
+              labelStyle: TextStyle(fontSize: 20),
+              labelPadding:
+              EdgeInsets.only(left: 45, right: 45, top: 10, bottom: 10),
+              indicator: BoxDecoration(
+                  color: colorstheme,
+                  borderRadius: BorderRadius.circular(20)),
+              controller: _tabController,
+              tabs: [
+                Text('Day'),
+                Text('Week'),
+                Text('Month'),
+              ]),
         ),
-        Center(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.05, horizontal: MediaQuery.of(context).size.width*0.3),
-            decoration: BoxDecoration(
-              color: Color(0xFFa4def9),
-              border: Border.all(
-                color: Colors.black,
-                width: 1
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text("TOTAL: $dep", style: TextStyle(fontSize: 20),),
-          ),
-        ),
-        SizedBox(height: 50),
-        Center(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.05, horizontal: MediaQuery.of(context).size.width*0.3),
-            decoration: BoxDecoration(
-              color: Color(0xFFa4def9),
-              border: Border.all(
-                  color: Colors.black,
-                  width: 1
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text("SCORE", style: TextStyle(fontSize: 20),),
-          ),
-        ),
-        SizedBox(height: 50),
-        Center(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.05, horizontal: MediaQuery.of(context).size.width*0.3),
-            decoration: BoxDecoration(
-              color: Color(0xFFa4def9),
-              border: Border.all(
-                  color: Colors.black,
-                  width: 1
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text("AVG: $scr", style: TextStyle(fontSize: 20),),
-          ),
-        ),
-        SizedBox(height: 50),
+        Expanded(
+          child: TabBarView(
+              controller: _tabController, children: [
+            ChartsDemo(new_result[2]),
+            ChartsDemo([]),
+            ChartsDemo([]),
+          ]),
+        )
+
       ],
     );
   }
   dynamic ProcessResults(List<dynamic> string) {
     final depression = List<int>.filled(this.widget.result.length, 0);
     final score = List<double>.filled(this.widget.result.length, 0);
+    final time = List<DateTime>.empty();
     var total = 0; var temp = 0.0;
     for (int i = 0; i< string.length; i++){
       String substring = string[i].substring(1,string[i].length-1);
@@ -108,9 +104,10 @@ class _DiagnoseState extends State<Diagnose> {
       score[i] = double.parse(substring.substring(3));
       temp = temp + score[i];
     }
-    return [total,temp/string.length];
+    return [total,temp/string.length, score];
   }
 }
+
 
 
 

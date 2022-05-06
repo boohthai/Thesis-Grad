@@ -6,17 +6,20 @@
 // import 'package:path_provider/path_provider.dart';
 
 import 'package:thesis_v01/controllers/convert_csv.dart';
+import 'package:intl/intl.dart';
 
 enum MessageType { text, audio, image, video, undefined }
 enum MessageStatus {not_sent, not_view, viewed, undefined }
 
 class ChatMessage {
+  final DateTime timestamp;
   final String text;
   final MessageType messageType;
   final MessageStatus messageStatus;
   final bool isSender;
 
   ChatMessage({
+    required this.timestamp,
     this.text = '',
     required this.messageType,
     required this.messageStatus,
@@ -53,11 +56,14 @@ MessageStatus messageStatusConverter(String type) {
 }
 
 ChatMessage createMessage(field) {
-  String text = field[0];
-  String messageType = field[1];
-  String messageStatus = field[2];
-  int isSender = field[3];
+  //DateTime timestamp = field[0];
+  DateTime timestamp = new DateFormat("yyyy/mm/dd hh:mm:ss").parse(field[0]);
+  String text = field[1];
+  String messageType = field[2];
+  String messageStatus = field[3];
+  int isSender = field[4];
   return ChatMessage(
+      timestamp: timestamp,
       text: text,
       messageType: messageTypeConverter(messageType),
       messageStatus: messageStatusConverter(messageStatus),
@@ -72,13 +78,8 @@ Future<List<ChatMessage>> csvToMessages(filepath) async{
     var message = createMessage(field);
     chatMessages.add(message);
   }
-
   return chatMessages;
 }
 
-// List<ChatMessage> await demeChatMessages =
-//      csvToMessages('user_chat_data.csv');
 
-// void main () {
-//   print(demeChatMessages[3].text);
-// }
+

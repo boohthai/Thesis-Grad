@@ -83,17 +83,18 @@ array = {"output": ""}
 @app.route('/', methods=['POST', 'GET'])
 def index():
     final_result = ""
-    request_data = json.loads(request.data.decode('utf-8'))
-    print(request_data)
-    text_from_app = request_data['text']
-    print(f"Input text: {text_from_app}")
-    final_result = get_depression_score(text_from_app)
+    #request_data = json.loads(request.data.decode('utf-8'))
+    #request_data = get_data()
+    # print(request_data)
+    # text_from_app = request_data['text']
+    # print(f"Input text: {text_from_app}")
+    final_result = get_depression_score(get_data())
     print(final_result)
 
     return jsonify({"output":str(final_result)})
 
 if __name__ == '__main__':
-    pro_data = get_data()
-    print(get_depression_score(pro_data))
+    print(get_data())
+    print(get_depression_score(get_data()))
     #      "Dù sao thì cuối cùng cô ấy cũng thấy cô đơn và chán nản đến mức một ngày nọ, cô ấy nhốt mình trong phòng và tự bắn mình. "))
-    #app.run(host='0.0.0.0',port = 8000, debug=True)
+    app.run(host='0.0.0.0',port = 8000, debug=True)
