@@ -24,7 +24,6 @@ Future<List<List<dynamic>>> csvToFields(filepath) async {
 }
 void main() async{
   final messages = await csvToFields("assets/user_chat_data.csv");
-
   for (var msg in messages) {
     print(msg);
   }

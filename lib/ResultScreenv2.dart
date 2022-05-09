@@ -71,9 +71,9 @@ class _Home_ScreenState extends State<Home_Screen>
           Expanded(
             child: TabBarView(
                 controller: _tabController, children: [
-              ChartsDemo([]),
-              ChartsDemo([]),
-              ChartsDemo([]),
+              ChartsDemo([],[]),
+              ChartsDemo([],[]),
+              ChartsDemo([],[]),
             ]),
           )
         ],

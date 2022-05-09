@@ -3,29 +3,22 @@ import 'dart:math';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'ResultScreen.dart' as calculated;
 class ChartsDemo extends StatefulWidget {
-  //
-  ChartsDemo(List) : super();
-
+  final List<String> date;
+  final List<dynamic> score;
+  ChartsDemo(this.date, this.score) : super();
   @override
   ChartsDemoState createState() => ChartsDemoState();
 }
 
 class ChartsDemoState extends State<ChartsDemo> {
-  //
   late final List<charts.Series<dynamic, String>> seriesList;
-
-  static List<charts.Series<Info, String>> _createRandomData() {
-
-    final random = Random();
-    final desktopSalesData = [
-      Info('Mon', random.nextInt(100)),
-      Info('Tue', random.nextInt(100)),
-      Info('Wed', random.nextInt(100)),
-      Info('Thu', random.nextInt(100)),
-      Info('Fri', random.nextInt(100)),
-      Info('Sat', random.nextInt(100)),
-      Info('Sun', random.nextInt(100)),
-    ];
+  static List<charts.Series<Info, String>> _createData(date,score) {
+    List<Info> desktopSalesData = [];
+    for (int i = 0; i<date.length; i++) {
+      print(date[i]);
+      print(score[i]);
+      desktopSalesData.add(Info(date[i].toString(), score[i]*100));
+    }
 
     return [
       charts.Series<Info, String>(
@@ -33,7 +26,7 @@ class ChartsDemoState extends State<ChartsDemo> {
         domainFn: (Info info, _) => info.time,
         measureFn: (Info info, _) => info.value,
         data: desktopSalesData,
-        fillColorFn: (Info sales, _) {
+        fillColorFn: (Info score, _) {
           return charts.MaterialPalette.blue.shadeDefault;
         },
       ),
@@ -59,15 +52,14 @@ class ChartsDemoState extends State<ChartsDemo> {
   @override
   void initState() {
     super.initState();
-    seriesList = _createRandomData();
+    seriesList = _createData(this.widget.date,this.widget.score);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
-        padding: EdgeInsets.all(40.0),
+        padding: EdgeInsets.all(20.0),
         child: barChart(),
       ),
     );
@@ -76,6 +68,6 @@ class ChartsDemoState extends State<ChartsDemo> {
 
 class Info {
   final String time;
-  final int value;
+  final dynamic value;
   Info(this.time, this.value);
 }

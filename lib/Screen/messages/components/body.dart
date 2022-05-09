@@ -4,8 +4,8 @@ import 'package:thesis_v01/Screen/messages/components/chat_input.dart';
 import 'package:thesis_v01/models/ChatMessages.dart';
 import 'package:intl/intl.dart';
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
-
+  Body({Key? key}) : super(key: key) {}
+  //List<dynamic> passed = [];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +20,8 @@ class Body extends StatelessWidget {
                 { print(snapshot);
                 return Text('Error: ${snapshot.error}');}
                 else
-                { print(snapshot.data);
+                { //passed = passed.add(snapshot.data![0]);
+                  print(snapshot.data![0]);
                 //return Text('Loadng');
                 return  Expanded(
                     child: ListView.builder(
@@ -43,14 +44,12 @@ class Message extends StatelessWidget {
     Key? key,
     required this.message,
   }) : super(key: key);
-
   final ChatMessage message;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    var time = DateFormat.yMMMMd('en-US').format(message.timestamp);
-
+    String time = DateFormat.MMMMEEEEd().format(message.timestamp);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
@@ -83,13 +82,13 @@ class Message extends StatelessWidget {
           ],
         ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               mainAxisAlignment:
               message.isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
               children: [
                 Container(
-                  child: Text(time.toString(),
+                  child: Text(time,
                   style: TextStyle( fontSize: 12, fontStyle: FontStyle.italic,),) ,
                 ),
               ],

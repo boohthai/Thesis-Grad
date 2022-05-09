@@ -43,10 +43,6 @@ class MyCustomFormState extends State<MyCustomForm> {
   String text = "";
   String depressionResult = "";
   String depressionScore = "";
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -61,8 +57,6 @@ class MyCustomFormState extends State<MyCustomForm> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 50),
-
-
             SizedBox(height: 30),
             Center(
               //padding: const EdgeInsets.symmetric(vertical: 16.0),

@@ -57,7 +57,7 @@ MessageStatus messageStatusConverter(String type) {
 
 ChatMessage createMessage(field) {
   //DateTime timestamp = field[0];
-  DateTime timestamp = new DateFormat("yyyy/mm/dd hh:mm:ss").parse(field[0]);
+  DateTime timestamp = new DateFormat("yyyy-mm-dd").parse(field[0]);
   String text = field[1];
   String messageType = field[2];
   String messageStatus = field[3];

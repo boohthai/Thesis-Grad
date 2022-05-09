@@ -27,7 +27,7 @@ def get_data():
         params = config()
         conn = psycopg2.connect(database="Thesis", user='postgres', password='Tt0979566863', host ='localhost', port= '5432')
         cur = conn.cursor()
-        cur.execute("SELECT * FROM public.\"UserConversation\"")
+        cur.execute("SELECT * FROM public.\"userconversation\"")
         print("The number of parts: ", cur.rowcount)
         result = cur.fetchall()
         cur.close()
@@ -61,6 +61,7 @@ def text_encoder(text):
 
 def get_depression_score(lst_data):
     count = 0
+    print(len(lst_data))
     lst_result = []
     for i in range(len(lst_data)):
         if lst_data[i][4] == True:
