@@ -54,7 +54,6 @@ class ChartsDemoState extends State<ChartsDemo> {
     super.initState();
     seriesList = _createData(this.widget.date,this.widget.score);
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

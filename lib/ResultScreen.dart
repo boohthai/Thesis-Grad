@@ -7,6 +7,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:thesis_v01/controllers/convert_csv.dart';
 import 'models/ChatMessages.dart';
 import 'dart:math';
+import 'package:intl/intl.dart';
 class ResultPage extends StatefulWidget {
   final List<dynamic> processedResult;
   final List<String> dateseries;
@@ -46,7 +47,7 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
   late TabController _tabController;
   @override
   void initState() {
-    _tabController = new TabController(length: 3, vsync: this, initialIndex: 0)
+    _tabController = new TabController(length: 2, vsync: this, initialIndex: 0)
       ..addListener(() {});
     super.initState();
   }
@@ -56,7 +57,7 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
     dynamic new_result = ProcessResults(result);
     return Column(
       children: <Widget>[
-        SizedBox(height: 10),
+       // SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
@@ -74,17 +75,17 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
                   borderRadius: BorderRadius.circular(20)),
               controller: _tabController,
               tabs: [
-                Text('Day'),
                 Text('Week'),
                 Text('Month'),
+               // Text('General'),
               ]),
         ),
         Expanded(
           child: TabBarView(
               controller: _tabController, children: [
             ChartsDemo(new_result[1],new_result[2]),
-            ChartsDemo([],new_result[2]),
-            ChartsDemo([],new_result[2]),
+            ChartsDemo(new_result[3],new_result[4]),
+           // ChartsDemo([],new_result[2]),
           ]),
         )
 
@@ -95,9 +96,11 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
     final depression = List<int>.filled(this.widget.result.length, 0);
     var score = List<double>.filled(this.widget.result.length, 0);
     final dateList = this.widget.date;
+    // print("Hello");
+    // print(dateList);
     List<int> store = [];
     var total = 0; var temp = 0.0;
-    for (int i = 0; i< string.length; i++){
+    for (int i = 0; i < string.length; i++){
       String substring = string[i].substring(1,string[i].length);
       if (substring.contains(")")) {
         substring = substring.substring(0,substring.indexOf(")"));
@@ -129,8 +132,46 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
       }
      }
      store.add(dateList.length-1);
-     print(store);
-     print(score);
+    List<dynamic> avg_month= [];
+    List <DateTime> tempDate = [];
+    for (int i = 0; i < dateList.length; i++){
+      tempDate.add(new DateFormat("yyyy-mm-dd").parse(dateList[i]));
+    }
+    i = 0;
+    index = i+1;
+    List<int> neededMonth = [tempDate[0].month];
+    List <int> store_month_index = [];
+    while (index<tempDate.length) {
+      if (tempDate[i].month==tempDate[index].month) {
+        index++;
+      }
+      else {
+        store_month_index.add(index);
+        i = index;
+        index = i + 1;
+      }
+    }
+    var sum = 0.0;
+    if (store_month_index.length == 0) {
+      for (int i = 0; i < tempDate.length; i++) {
+        sum += score[i];
+      }
+      avg_month.add(sum/tempDate.length);
+      print(avg_month);
+    }
+    else {
+      for (int i = 0; i<store_month_index.length; i++) {
+        var count = 0.0;
+        if (i!=store_month_index.length-1) {
+          neededMonth.add(tempDate[store_month_index[i]].month);
+        }
+        for (int j = index; j<store_month_index[i]; j++){
+          count = count + score[j];
+        }
+        avg_month.add(count/store_month_index[i]);
+        index = store[i];
+      }
+    }
      List<String> neededDate = [dateList[0]];
      List<dynamic> avg = []; index =0;
       for (int i = 0; i<store.length; i++){
@@ -145,10 +186,15 @@ class _DiagnoseState extends State<Diagnose> with SingleTickerProviderStateMixin
         avg.add(count/store[i]);
         index = store[i];
      }
-     print(avg);
-     print(neededDate);
-    return [total,neededDate, avg];
+     List<String> neededMonth_string = [];
+      for (int i = 0; i<neededMonth.length; i++) {
+        neededMonth_string.add(neededMonth[i].toString());
+      }
+      print(neededMonth_string);
+      print(avg_month);
+    return [total, neededDate, avg, neededMonth_string,avg_month];
   }
+
 }
 
 

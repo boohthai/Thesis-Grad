@@ -1,54 +1,135 @@
-﻿2022-01-06,Hi man,text,viewed,0
-2022-01-06,"Hello, what sub bro?",text,viewed,1
+﻿2022-01-06,Ê mày,text,viewed,0
+2022-01-06,"Tao đây, mày sao thế đấy?",text,viewed,1
 2022-01-06,...,text,viewed,1
-2022-01-06,"OMG bro, the error just happened in our code",text,viewed,0
-2022-01-06,"Oh dame, this is not so good",text,viewed,1
-2022-01-06,"We must try out some auto fixing tool, it might be helpful",text,viewed,1
-2022-01-06,"Oh no, our application is on the way of deployment and this happenned, so unfortunate",text,viewed,1
-2022-01-07,Hello there,text,viewed,1
-2022-01-07,how are you holding up?,text,viewed,0
-2022-01-07,Not too much,text,viewed,1
-2022-01-07,So how was ur day?,text,viewed,0
-2022-01-07,I just received the final results for in semester,text,viewed,1
-2022-01-07,And I think it is very terible,text,viewed,1
-2022-01-07,"Damn bro, so sorry to hear that",text,viewed,0
-2022-01-07,Any idea why?,text,viewed,0
-2022-01-07,"I failed the DSA course twice, and I feel hopeless for my future...",text,viewed,1
-2022-01-07,Why bad things always happen to me?,text,viewed,1
-2022-01-07,I think that failing is quite common in university,text,viewed,0
-2022-01-07,I mean I know a guy failed 5 out of 6 subjects in his first semester,text,viewed,0
-2022-01-07,"I just want to stop everything, I don't want to be in this hell anymore",text,viewed,1
-2022-01-07,"Plus, you can ask for help from your friends",text,viewed,0
-2022-01-07,"I'm sure you have friends that passed the course, right?",text,viewed,0
-2022-01-07,yeah I think so,text,viewed,1
-2022-01-07,"You only need to set ur goal at 5.5 or 6.0, just enough to pass",text,viewed,0
-2022-01-07,No one can always pass a course with flying colors you know,text,viewed,1
-2022-01-07,I think I should drop out,text,viewed,1
-2022-01-07,This school is such a hell,text,viewed,1
-2022-01-07,So tell me,text,viewed,0
-2022-01-07,"Why did you choose to be here in the first place? I'm sure it is a good reason, right?",text,viewed,0
-2022-01-07,I don't want to talk about it!,text,viewed,1
-2022-01-07,It was a fucking bad decision,text,viewed,1
-2022-01-07,Well can you tell me why do you think so?,text,viewed,0
-2022-01-07,"I guess at least it was a good decision at the time, so what was on your mind back then",text,viewed,0
-2022-01-07,"I can't even pass a basic course, is it not bad enough?",text,viewed,1
-2022-01-07,"Failing a basic course does not mean you are bad, it just means that you struggle more than others, that's all",text,viewed,0
-2022-01-07,"When you are ready, I'm sure you can pass it",text,viewed,0
-2022-01-07,"I don't know, I hope so :/",text,viewed,1
-2022-01-07,"Thank you, I think I should rest for a while",text,viewed,1
-2022-01-08,Morning,text,viewed,1
-2022-01-08,"Good morning my friend, did you have a good sleep?",text,viewed,0
-2022-01-08,"Well, not too bad, how about u?",text,viewed,1
-2022-01-08,Not so good,text,viewed,0
-2022-01-08,I had some coffee at 8pm so it was a struggle trying to get some sleep,text,viewed,0
-2022-01-08,it makes sense,text,viewed,1
-2022-01-08,I still think about my failure,text,viewed,1
-2022-01-08,Well think of it this way,text,viewed,0
-2022-01-08,There are hundreds of student with hundreds of different typoes of study methods,text,viewed,0
-2022-01-08,But there is only one teacher,text,viewed,0
-2022-01-08,"So how can that lecturer teaches the entire class the best way, right?",text,viewed,0
-2022-01-08,"Your study method is simply not suitable for your lecturer, that's all",text,viewed,0
-2022-01-08,"All you need to do is finding your own way of studying DSA, I'm sure you will succeed",text,viewed,0
-2022-01-08,"Yeah, I may think about it... I hope I can over this hard time",text,viewed,1
-2022-01-08,Talk to you later,text,viewed,1
-2022-01-08,bye byeee,,,0
+2022-01-06,"Code của mình mới bị lỗi kì mày, trời ơi",text,viewed,0
+2022-01-06,Không ổn rồi,text,viewed,1
+2022-01-06,Chắc tao vs mày kiếm với xài thử mấy cái tool sửa lỗi auto thử,text,viewed,1
+2022-01-06,"Xui ghê, đang yên đang lành mình đang đi đúng hướng nữa, tự nhiên đùng 1 cái",text,viewed,1
+2022-01-07,Sao vậy,text,viewed,1
+2022-01-07,Có gì hong,text,viewed,0
+2022-01-07,Ko gì nhiều,text,viewed,1
+2022-01-07,Hôm nay của m sao,text,viewed,0
+2022-01-07,T mới có điểm thi cuối kỳ,text,viewed,1
+2022-01-07,Và nó nát lắm,text,viewed,1
+2022-01-07,Chia buồn cùng m nhe,text,viewed,0
+2022-01-07,Mà có lý do nào cho việc này hong,text,viewed,0
+2022-01-07,"Tao rớt DSA 2 lần rồi, và tương lai nó mờ mịt quá m",text,viewed,1
+2022-01-07,Sao lúc nào tao cũng phải xui như vậy,text,viewed,1
+2022-01-07,Thấy rớt môn bình thường mà,text,viewed,0
+2022-01-07,Tao biết một thằng rớt 5 trên 6 môn tổng cộng kì này rồi á)),text,viewed,0
+2022-01-07,"Tao chỉ muốn dừng, tao chán cái cảnh này lắm rồi)",text,viewed,1
+2022-01-07,Mà m cũng nhờ bạn giúp đc mà,text,viewed,0
+2022-01-07,Chắc cũng có t1 2 đứa bạn m qua môn đó mà đúng ko,text,viewed,0
+2022-01-07,"yeah, chắc v đó",text,viewed,1
+2022-01-07,M chỉ cần đặt ra là 5.5 hoặc 8 là được vừa đủ qua môn rồi,text,viewed,0
+2022-01-07,Chưa chắc ai qua môn mà cũng điểm cao hết,text,viewed,1
+2022-01-07,Tao nghĩ tao sẽ bỏ học,text,viewed,1
+2022-01-07,Cái trường này nó quá mức vs tao rồi,text,viewed,1
+2022-01-07,Vậy nói tao nghe,text,viewed,0
+2022-01-07,Từ ban đầu sao mày lại chọn ở đây? Tao nghĩ có nguyên nhân tốt mà đúng hong?,text,viewed,0
+2022-01-07,Tao ko muốn nói về việc đó,text,viewed,1
+2022-01-07,Một lầm thực sự,text,viewed,1
+2022-01-07,Vậy tại sao m lại nghĩ như v?,text,viewed,0
+2022-01-07,"Tao nghĩ lúc đó thì là một quyết định đúng đắn, nhưng mà lúc đó thì m nghĩ gì",text,viewed,0
+2022-01-07,"Tao còn k qua nổi môn cơ bản, chưa đủ tệ hả",text,viewed,1
+2022-01-07,"Rớt một môn cơ bản ko có nghĩ là mày học dở, chỉ đơn giản gặp nhiều khó khăn hơn người khác thôi",text,viewed,0
+2022-01-07,"Khi nào m sẵn sàng, thì t chắc là m có thể qua đc mà",text,viewed,0
+2022-01-07,"Tao cũng ko biết nữa, hy vọng dc",text,viewed,1
+2022-01-07,"Cảm ơn mày, chắc tao nằm nghỉ một xíu",text,viewed,1
+2022-01-08,Hé lô mày,text,viewed,1
+2022-01-08,"Hi, mày ngủ ngon ko",text,viewed,0
+2022-01-08,"Cũng tạm, ko tệ lắm, mày sao",text,viewed,1
+2022-01-08,Cũng ko ổn lắm,text,viewed,0
+2022-01-08,T uống cà phê hồi 8g tối hôm qua nên ngủ hơi khó với ko sâu,text,viewed,0
+2022-01-08,Cũng đúng,text,viewed,1
+2022-01-08,Tao vẫn nghĩ về việc rớt môn,text,viewed,1
+2022-01-08,Hmmm nghĩ như này thử,text,viewed,0
+2022-01-08,Có hàng trăm người vs hàng trăm cách học khác nhau,text,viewed,0
+2022-01-08,Nhưng chỉ có một người giáo viên thôi mày,text,viewed,0
+2022-01-08,Vậy thì một người thầy cũng không chắc dạy cho lớp đó một cách tốt nhất được đúng ko?,text,viewed,0
+2022-01-08,"Yeah, I may think about it... I hope I can over this hard time. Ừ để t thử nghĩ như vậy, mong là vượt qua được",text,viewed,0
+2022-01-08,Chắc phương pháp học của mày ko phù hợp vs thầy thôi chứ ko có gì đâu.,text,viewed,0
+2022-01-08,"Điều mày cần làm bây giờ là tìm ra cách học cho DSA, t chắc làm sẽ vượt qua được thôi",text,viewed,1
+2022-01-08,Xíu tao nhắn m nha,text,viewed,1
+2022-01-08,Bái bai,text,viewed,0
+2022-01-09,Ê mày sao cứ như kiểu cuộc đời này nó chống lại t á,text,viewed,1
+2022-01-09,"Là sao, gặp chuyện gì nữa hả",text,viewed,0
+2022-01-09,Chuyện học hành đã chẳng ra gì rồi mà tới chuyện bạn bè cũng gặp vấn đề nữa,text,viewed,1
+2022-01-09,Nói kĩ hơn đi mày,text,viewed,0
+2022-01-09,M nhớ hồi đó t kể t có đứa bạn quen bồ nó xong bỏ rơi t không?,text,viewed,1
+2022-01-09,"Ừa nhớ, mà làm gì tới nỗi bỏ rơi m, nói gì tiêu cực quá vậy",text,viewed,0
+2022-01-09,Không mày ơi thực sự là không khác gì bỏ rơi luôn á,text,viewed,1
+2022-01-09,"Lúc t buồn vì chuyện điểm số, nhắn nó cũng không trả lời, có thì lại kêu t làm quá lên blah blah, có lúc còn chửi t nữa",text,viewed,1
+2022-01-09,"T rủ đi chơi thì lúc nào cũng kêu hẹn đi với bồ, gần như giờ cuộc sống của nó xoay quanh con nhỏ đó luôn á",text,viewed,1
+2022-01-09,"T nghĩ là mỗi người khi yêu sẽ có 1 quan điểm, ví dụ như dành hết thời gian cho người kia",text,viewed,0
+2022-01-09,Có người thì cân bằng cả 2 mặt yêu đương và bạn bè,text,viewed,0
+2022-01-09,Nhưng không có nghĩa là nó không coi m là bạn nữa đâu,text,viewed,0
+2022-01-09,T biết là nó làm như vậy khiến m khó chịu nhưng m cố hiểu và thông cảm cho nó đi,text,viewed,0
+2022-01-09,"M có thể nói chuyện với t mà, t không thấy phiền chút nào đâu",text,viewed,0
+2022-01-09,"Kể cả vậy thì nó với t cũng từng rất thân mà, lúc nào cũng ở cạnh nhau luôn ấy, đột ngột làm vậy t bất ngờ lắm chứ",text,viewed,1
+2022-01-09,"T chắc chắn là m vẫn quan trọng đối với nó thôi, chỉ là nó ko thể cân bằng giữa bạn bè và tình yêu nên đành phải làm vậy",text,viewed,0
+2022-01-09,M nói cũng có lý,text,viewed,1
+2022-01-09,"Là bạn nó, t cũng muốn nó được vui vẻ với bồ",text,viewed,1
+2022-01-09,Cảm ơn đã lắng nghe t nhé,text,viewed,1
+2022-01-09,"Có gì đâu mà cảm ơn, nghỉ ngơi đi nha",text,viewed,0
+2022-01-09,Okay bye bạn,text,viewed,1
+2022-01-10,M ơi tâm sự xíu đi,text,viewed,1
+2022-01-10,"Ơi t đây, sao thế",text,viewed,0
+2022-01-10,"Hôm nay thì t không có chuyện, mà là thằng em t",text,viewed,1
+2022-01-10,Nó làm sao,text,viewed,0
+2022-01-10,Thì năm nay nó học lớp 12 rồi nên bố mẹ t bắt đầu định hướng cho nó,text,viewed,1
+2022-01-10,Nó bảo muốn học truyền thông vì suốt cấp 3 nó cũng hoạt động cho media của trường nó,text,viewed,1
+2022-01-10,"Nhưng bố mẹ t phản đối ghê lắm, bảo nghề đó bấp bênh mà lương lậu không đảm bảo",text,viewed,1
+2022-01-10,Còn bảo là làm nghề đó không được nhiều người coi trọng nữa,text,viewed,1
+2022-01-10,Bố mẹ t muốn nó theo ngành y như bố,text,viewed,1
+2022-01-10,Vì dù sao bố t có kinh nghiệm cũng giúp dc nó học và cả khi ra trường cũng giúp nó có việc nữa,text,viewed,1
+2022-01-10,Thì thực ra m cũng nên hiểu là bố mẹ làm vậy là vì lo cho nó thôi,text,viewed,0
+2022-01-10,T biết là nó thích theo truyền thông nhưng với kinh nghiệm thì bố mẹ m nghĩ đấy là 1 sở thích nhất thời chứ không phải là đam mê,text,viewed,0
+2022-01-10,"Nhà t tranh cãi về vấn đề này cũng mấy ngày nay rồi, t ngồi ngoài nghe thôi mà cũng đau hết cả đầu",text,viewed,1
+2022-01-10,"T nghĩ m nên bảo em suy nghĩ kĩ về nguyện vọng của mình, nếu thực sự đam mê thì mới nói chuyện thẳng thắn với bố mẹ về việc đó",text,viewed,0
+2022-01-10,Nếu như em m quyết tâm thì t nghĩ không bố mẹ nào lại phản đối đâu,text,viewed,0
+2022-01-10,Chẳng qua là bố mẹ chưa thấy sự quyết tâm của em nên mới lo lắng đấy,text,viewed,0
+2022-01-10,"Ừm t cũng thấy thế, để t bảo em xem thế nào",text,viewed,1
+2022-01-10,Cảm ơn m nhiều nha,text,viewed,1
+2022-01-10,Oke có chuyện gì cứ gọi t nha,text,viewed,0
+2022-01-11,T mệt mỏi với cái vụ bài tập lớn quá m ơi,text,viewed,1
+2022-01-11,Sao =))) lại công ty trách nhiệm hữu hạn 1 mình tao à,text,viewed,0
+2022-01-11,Chứ sao nữa,text,viewed,1
+2022-01-11,Trời ơi ghép nhóm chung với 2 ông khoá trên nha,text,viewed,1
+2022-01-11,Mà nhắn vô group hỏi tiến độ k thèm seen,text,viewed,1
+2022-01-11,3 ngày nữa nộp rồi mà chưa thấy nói tiếng nào nữa,text,viewed,1
+2022-01-11,T đang phải làm phần của 2 ông đó để dự phòng nè,text,viewed,1
+2022-01-11,Khổ quá vậy =))) đen đủi gì đâu không,text,viewed,0
+2022-01-11,Số t nó khổ vậy đó,text,viewed,1
+2022-01-11,Mà sao cái trường này cũng nhiều thành phần chán lắm luôn,text,viewed,1
+2022-01-11,Ý thức không có thì không hiểu muốn qua môn kiểu gì nữa,text,viewed,1
+2022-01-11,Thôi chịu =))) nó không làm thì loại nó ra thôi,text,viewed,0
+2022-01-11,"Có cần giúp gì không, t thi xong rồi giờ rảnh lắm",text,viewed,0
+2022-01-11,"Trời bạn ơi cứu tôi với, để t gửi file đề bài rùi làm giúp t phần này nha",text,viewed,1
+2022-01-11,"Oke đưa t đi, t mà không giúp chắc m lăn ra xỉu luôn quá",text,viewed,0
+2022-01-12,Ê m ơi tự dưng t thấy lo quá,text,viewed,1
+2022-01-12,Sao lại dở chứng nữa vậy,text,viewed,0
+2022-01-12,"Thì t thấy mấy đứa bạn đi làm quá trời luôn, không chính thức thì cũng là thực tập này kia",text,viewed,1
+2022-01-12,Trong khi t học còn chưa ra gì nữa,text,viewed,1
+2022-01-12,Rồi sau này ra trường t không kiếm được việc thì sao,text,viewed,1
+2022-01-12,Cứ bình tĩnh đi mày ơi,text,viewed,0
+2022-01-12,Chúng nó đi làm được thì chúng nó hơn mình thôi có gì đâu,text,viewed,0
+2022-01-12,Đừng có lúc nào cũng theo đuổi người khác,text,viewed,0
+2022-01-12,Việc của m bây giờ là học,text,viewed,0
+2022-01-12,M vào đại học là để học cơ mà,text,viewed,0
+2022-01-12,Nhưng mà nhìn ai cũng hơn t hết á,text,viewed,1
+2022-01-12,T tự ti lắm m...,text,viewed,1
+2022-01-12,T nói hơi triết lý chút chứ ở đời này không biết được nay mai thế nào đâu,text,viewed,0
+2022-01-12,Có khi hôm nay họ hơn mình mà qua hôm sau mình thành sếp người ta luôn ấy chứ,text,viewed,0
+2022-01-12,Đấy là t nói thế chứ không phải ai cũng may mắn được vậy nha =))) hiểu đại ý là được rồi,text,viewed,0
+2022-01-12,Mà m cũng không đi làm nhỉ,text,viewed,1
+2022-01-12,Ừ t có đi làm gì đâu,text,viewed,0
+2022-01-12,T không tự tin mình cân bằng được cả công việc và học hành nên thà cứ học cho xong đi rồi làm gì thì làm,text,viewed,0
+2022-01-12,Ừ chắc t lo nghĩ thái quá nhỉ,text,viewed,1
+2022-01-12,"M lo lắng là tốt, thế có nghĩa là m biết nghĩ cho bản thân",text,viewed,0
+2022-01-12,Nhưng lo lắng để có trách nhiệm với bản thân chứ đừng có lo lắng xong nghĩ làm gì kết quả cũng vậy,text,viewed,0
+2022-01-12,"Ừ t biết rồi, cảm ơn m lắm ý, không có m t không biết làm gì nữa",text,viewed,1
+2022-01-12,"Có gì đâu mà, t cũng từng trải qua cảm giác của m rồi nên t hiểu, giúp được m thì t cũng vui chứ",text,viewed,0
+2022-01-12,"T đi ngủ đây, mai dậy học với t đi",text,viewed,0
+2022-01-12,Oke 8h lên meet nha,text,viewed,1
+2022-01-12,Oke ngủ ngon,text,viewed,0

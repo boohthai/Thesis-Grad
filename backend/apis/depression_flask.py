@@ -14,7 +14,7 @@ from backend.config import config
 
 # Load depression model
 lstm_model = load_model(
-    "../models/lstm_model_e10_b8_n60_50_d0.1_0.1_lr0.001.h5")
+    "../models/lstm_model_e10_b8_n60_50_d0.01_0.01_lr0.001.h5")
 
 d_df = pd.read_csv("../data/vietaitweet.csv")
 tweets = d_df['tweet_vi'].values
